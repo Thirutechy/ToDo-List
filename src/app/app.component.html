@@ -1,0 +1,39 @@
+<div class="container">
+  <div class="row">
+    <h3>ToDo List</h3>
+    <div class="col-4">
+      <div class="form-group">
+        <input type="text" name="nameText" class="form-control" [(ngModel)]="name" >
+      </div>
+    </div>
+    <div class="col-1">
+      <button  class="btn btn-success" (click)="save()">Save</button>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-6 mt-2">
+      <h3>Pending List</h3>
+      <ul class="list-group">
+        <li class="list-group-item" *ngFor="let items of UserList; let i=index" >{{items}}
+          <div class="float-end"><a href="#" ><i class="bi bi-pencil-fill" (click)="edit(i)"></i></a>&nbsp;
+            <a href="#"><i class="bi bi-trash-fill text-danger" (click)="delete(i)"></i></a>&nbsp;
+            <a href="#" ><i class="bi bi-check-circle text-success" (click)="complete(i)"></i></a>
+          </div>
+          </li>
+      </ul>
+    </div>
+   <div class="col-6 mt-2">
+    <h3>Completed List</h3>
+    <ul class="list-group">
+      <li class="list-group-item" *ngFor="let item of completeItems"  >{{item}}
+        </li>
+    </ul>
+   </div>
+  </div>
+</div>
+<!-- gridview1 -->
+
+
+
+
+
